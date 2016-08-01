@@ -1,0 +1,29 @@
+{
+  "name": "express-rate-limiter-middleware",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmacdo02/express-rate-limiter-middleware.git"
+  },
+  "keywords": [
+    "rate-limit",
+    "express",
+    "middleware"
+  ],
+  "author": "Derek MacDonald",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dmacdo02/express-rate-limiter-middleware/issues"
+  },
+  "homepage": "https://github.com/dmacdo02/express-rate-limiter-middleware#readme",
+  "dependencies": {
+    "bluebird": "^3.4.1",
+    "express": "^4.14.0",
+    "redis": "^2.6.2"
+  }
+}
