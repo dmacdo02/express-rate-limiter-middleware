@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const localCache = require('./localCache');
 const redisCache = require('./redisCache');
@@ -7,17 +7,17 @@ module.exports = rateLimiter;
 
 function rateLimiter( options, patterns ) {
 
-	let cache = getCache(options);
+	const cache = getCache(options);
 
 	return function limiter( req, res, next) {
 		//using for instead of arr.forEach for maximum performance
 		for ( let i = 0, len = patterns.length; i < len; i++) {
-			let currentPattern = patterns[i];
-			let url = req.url;
+			const currentPattern = patterns[i];
+			const url = req.url;
 
 			if (!matchesRateLimitPattern(currentPattern, url)) continue;
 
-			let cacheKey = getCacheKey(currentPattern);
+			const cacheKey = getCacheKey(currentPattern);
 			return cache.get(cacheKey)
 				.then((requestCount) => {
 					if (isAboveLimit(requestCount, currentPattern.rateLimit, res)) {
@@ -30,7 +30,7 @@ function rateLimiter( options, patterns ) {
 		}
 
 		next();
-	}
+	};
 }
 
 function getCache(options) {
