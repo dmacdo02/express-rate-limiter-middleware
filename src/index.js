@@ -18,15 +18,12 @@ function rateLimiter( options, patterns ) {
 			if (!matchesRateLimitPattern(currentPattern, url)) continue;
 
 			let cacheKey = getCacheKey(currentPattern);
-			console.log('about to contact redis');
 			return cache.get(cacheKey)
 				.then((requestCount) => {
-					console.log('got the request count');
 					if (isAboveLimit(requestCount, currentPattern.rateLimit, res)) {
 						return;
 					}
 					return cache.incr(cacheKey).then(() => {
-						console.log('got here as well');
 						next();
 					});
 				});

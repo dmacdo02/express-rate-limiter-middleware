@@ -2,10 +2,10 @@ const express = require('express');
 const app = express();
 
 const options = {
-	redisOptions: {
+	/*redisOptions: {
 		host: '127.0.0.1',
 		port: 6379
-	},
+	},*/
 	defaultTimingWindowMs: 10000
 };
 

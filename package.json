@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha --reporter spec"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,9 @@
   "homepage": "https://github.com/dmacdo02/express-rate-limiter-middleware#readme",
   "dependencies": {
     "bluebird": "^3.4.1",
+    "chai": "^3.5.0",
     "express": "^4.14.0",
+    "mocha": "^3.0.0",
     "redis": "^2.6.2"
   }
 }
